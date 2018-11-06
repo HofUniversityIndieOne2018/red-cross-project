@@ -1,0 +1,7 @@
+#
+# PageTS for Red Cross Site
+#
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:red_cross_site/Configuration/TsConfig/Page/RTE.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:red_cross_site/Configuration/TsConfig/Page/TCEFORM.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:red_cross_site/Configuration/TsConfig/Page/TCEMAIN.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:red_cross_site/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts.tsconfig">

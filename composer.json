@@ -1,0 +1,49 @@
+{
+    "name": "oliver-hader/red-cross-project",
+    "description": "TYPO3 Demo project for local Red Cross unit",
+    "type": "project",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "packages/*"
+        }
+    ],
+    "require": {
+        "typo3/minimal": "^9.5",
+        "oliver-hader/red-cross-site": "^1.0",
+        "typo3/cms-adminpanel": "^9.5",
+        "typo3/cms-backend": "^9.5",
+        "typo3/cms-core": "^9.5",
+        "typo3/cms-extbase": "^9.5",
+        "typo3/cms-extensionmanager": "^9.5",
+        "typo3/cms-filelist": "^9.5",
+        "typo3/cms-fluid": "^9.5",
+        "typo3/cms-fluid-styled-content": "^9.5",
+        "typo3/cms-form": "^9.5",
+        "typo3/cms-frontend": "^9.5",
+        "typo3/cms-install": "^9.5",
+        "typo3/cms-recordlist": "^9.5",
+        "typo3/cms-recycler": "^9.5",
+        "typo3/cms-redirects": "^9.5",
+        "typo3/cms-reports": "^9.5",
+        "typo3/cms-setup": "^9.5",
+        "typo3/cms-t3editor": "^9.5",
+        "typo3/cms-tstemplate": "^9.5",
+        "typo3/cms-viewpage": "^9.5",
+        "cweagans/composer-patches": "^1.6"
+    },
+    "extra": {
+        "patches": {
+            "bk2k/bootstrap-package": {
+                "Processes symlinked SCSS sources": "https://patch-diff.githubusercontent.com/raw/benjaminkott/bootstrap_package/pull/585.patch"
+            }
+        }
+    },
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Oliver Hader",
+            "email": "oliver@typo3.org"
+        }
+    ]
+}
