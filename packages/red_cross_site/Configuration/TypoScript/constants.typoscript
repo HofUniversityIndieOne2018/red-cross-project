@@ -9,8 +9,8 @@
 ############
 page {
     logo {
-        file = EXT:red_cross_site/Resources/Public/Images/logo.svg
-        fileInverted = EXT:red_cross_site/Resources/Public/Images/logo-inverted.svg
+        file = EXT:red_cross_site/Resources/Public/Images/redcross_logo.svg
+        fileInverted = EXT:red_cross_site/Resources/Public/Images/redcross_logo_inverted.svg
         height = 52
         width = 192
         alt = Red Cross Site
@@ -18,6 +18,10 @@ page {
     }
     favicon {
         file = EXT:red_cross_site/Resources/Public/Icons/favicon.ico
+    }
+    theme {
+        navigation.type = top
+        breadcrumb.enableLevel = 0
     }
     fluidtemplate {
         layoutRootPath = EXT:red_cross_site/Resources/Private/Layouts/Page/
