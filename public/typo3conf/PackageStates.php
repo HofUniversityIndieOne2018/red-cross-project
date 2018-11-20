@@ -71,6 +71,9 @@ return [
         'red_cross_site' => [
             'packagePath' => 'typo3conf/ext/red_cross_site/',
         ],
+        'extension_builder' => [
+            'packagePath' => 'typo3conf/ext/extension_builder/',
+        ],
     ],
     'version' => 5,
 ];
