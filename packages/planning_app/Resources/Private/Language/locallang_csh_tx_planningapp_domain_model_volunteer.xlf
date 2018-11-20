@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-11-20T13:14:03Z" product-name="planning_app">
+		<header/>
+		<body>
+			<trans-unit id="user.description">
+				<source>Frontend User</source>
+			</trans-unit>
+			<trans-unit id="first_name.description">
+				<source>First name</source>
+			</trans-unit>
+			<trans-unit id="last_name.description">
+				<source>Last name</source>
+			</trans-unit>
+			<trans-unit id="date_of_birth.description">
+				<source>Date of Birth</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

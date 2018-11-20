@@ -1,0 +1,18 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<label for="user">
+	<f:translate key="tx_planningapp_domain_model_volunteer.user" />
+</label><br />
+	<f:form.textfield property="user" /><br />
+<label for="firstName">
+	<f:translate key="tx_planningapp_domain_model_volunteer.first_name" /> <span class="required">(required)</span>
+</label><br />
+	<f:form.textfield property="firstName" /><br />
+<label for="lastName">
+	<f:translate key="tx_planningapp_domain_model_volunteer.last_name" /> <span class="required">(required)</span>
+</label><br />
+	<f:form.textfield property="lastName" /><br />
+<label for="dateOfBirth">
+	<f:translate key="tx_planningapp_domain_model_volunteer.date_of_birth" /> <span class="required">(required)</span>
+</label><br />
+	<f:form.textfield property="dateOfBirth" value="{volunteer.dateOfBirth->f:format.date()}" /><br />
+</html>

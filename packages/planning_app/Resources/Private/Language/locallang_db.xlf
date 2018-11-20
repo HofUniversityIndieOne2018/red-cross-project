@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-11-20T13:14:03Z" product-name="planning_app">
+		<header/>
+		<body>
+			<trans-unit id="tx_planningapp_domain_model_volunteer">
+				<source>Volunteer</source>
+			</trans-unit>
+			<trans-unit id="tx_planningapp_domain_model_volunteer.user">
+				<source>User</source>
+			</trans-unit>
+			<trans-unit id="tx_planningapp_domain_model_volunteer.first_name">
+				<source>First Name</source>
+			</trans-unit>
+			<trans-unit id="tx_planningapp_domain_model_volunteer.last_name">
+				<source>Last Name</source>
+			</trans-unit>
+			<trans-unit id="tx_planningapp_domain_model_volunteer.date_of_birth">
+				<source>Date Of Birth</source>
+			</trans-unit>
+			<trans-unit id="tx_planningapp_domain_model_activity">
+				<source>Activity</source>
+			</trans-unit>
+			<trans-unit id="tx_planningapp_domain_model_activity.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_planningapp_domain_model_activity.location">
+				<source>Location</source>
+			</trans-unit>
+			<trans-unit id="tx_planningapp_domain_model_activity.time_frames">
+				<source>Time Frames</source>
+			</trans-unit>
+			<trans-unit id="tx_planningapp_domain_model_activity.volunteers">
+				<source>Volunteers</source>
+			</trans-unit>
+			<trans-unit id="tx_planningapp_domain_model_activity.resources">
+				<source>Resources</source>
+			</trans-unit>
+			<trans-unit id="tx_planningapp_domain_model_dateperiod">
+				<source>Date Period</source>
+			</trans-unit>
+			<trans-unit id="tx_planningapp_domain_model_dateperiod.start_time">
+				<source>Start Time</source>
+			</trans-unit>
+			<trans-unit id="tx_planningapp_domain_model_dateperiod.end_time">
+				<source>End Time</source>
+			</trans-unit>
+			<trans-unit id="tx_planningapp_domain_model_location">
+				<source>Location</source>
+			</trans-unit>
+			<trans-unit id="tx_planningapp_domain_model_location.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_planningapp_domain_model_location.latitude">
+				<source>Latitude</source>
+			</trans-unit>
+			<trans-unit id="tx_planningapp_domain_model_location.longitude">
+				<source>Longitude</source>
+			</trans-unit>
+			<trans-unit id="tx_planningapp_domain_model_location.address">
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="tx_planningapp_domain_model_address">
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="tx_planningapp_domain_model_address.street">
+				<source>Street</source>
+			</trans-unit>
+			<trans-unit id="tx_planningapp_domain_model_address.number">
+				<source>Number</source>
+			</trans-unit>
+			<trans-unit id="tx_planningapp_domain_model_address.zip">
+				<source>Zip</source>
+			</trans-unit>
+			<trans-unit id="tx_planningapp_domain_model_address.city">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="tx_planningapp_domain_model_address.country">
+				<source>Country</source>
+			</trans-unit>
+			<trans-unit id="tx_planningapp_domain_model_resource">
+				<source>Resource</source>
+			</trans-unit>
+			<trans-unit id="tx_planningapp_domain_model_resource.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_planning_app_dashboard.name">
+				<source>Dashboard</source>
+			</trans-unit>
+			<trans-unit id="tx_planning_app_dashboard.description">
+				<source></source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
