@@ -45,5 +45,8 @@
             "name": "Oliver Hader",
             "email": "oliver@typo3.org"
         }
-    ]
+    ],
+    "require-dev": {
+        "friendsoftypo3/extension-builder": "dev-master"
+    }
 }
