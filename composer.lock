@@ -3840,12 +3840,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfTYPO3/extension_builder.git",
-                "reference": "19bfca85a07ec94c6fef774651a2789de8071ae8"
+                "reference": "2dc3e18ef4158a5e7df502abccecf32bd07d1ada"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfTYPO3/extension_builder/zipball/19bfca85a07ec94c6fef774651a2789de8071ae8",
-                "reference": "19bfca85a07ec94c6fef774651a2789de8071ae8",
+                "url": "https://api.github.com/repos/FriendsOfTYPO3/extension_builder/zipball/2dc3e18ef4158a5e7df502abccecf32bd07d1ada",
+                "reference": "2dc3e18ef4158a5e7df502abccecf32bd07d1ada",
                 "shasum": ""
             },
             "require": {
@@ -3893,7 +3893,7 @@
                 "extension_builder",
                 "typo3"
             ],
-            "time": "2018-11-20T20:44:33+00:00"
+            "time": "2018-11-20T21:16:08+00:00"
         }
     ],
     "aliases": [],
