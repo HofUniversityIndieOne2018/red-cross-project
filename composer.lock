@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1c84e7a789be7e5c4ad2be00390659b4",
+    "content-hash": "fe392ebfbba94c4bf0961000477fa741",
     "packages": [
         {
             "name": "bk2k/bootstrap-package",
@@ -1228,6 +1228,34 @@
                 "php"
             ],
             "time": "2018-10-10T09:24:14+00:00"
+        },
+        {
+            "name": "oliver-hader/planning-app",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "packages/planning_app",
+                "reference": "65a5d477e98cf341b4231313477a8dd4654dcd2e",
+                "shasum": null
+            },
+            "require": {
+                "typo3/cms-core": "^9.5"
+            },
+            "replace": {
+                "planning_app": "self.version",
+                "typo3-ter/planning-app": "self.version"
+            },
+            "type": "typo3-cms-extension",
+            "autoload": {
+                "psr-4": {
+                    "OliverHader\\PlanningApp\\": "Classes"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "OliverHader\\PlanningApp\\Tests\\": "Tests"
+                }
+            }
         },
         {
             "name": "oliver-hader/red-cross-site",
