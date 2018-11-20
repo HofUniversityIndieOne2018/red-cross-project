@@ -140,7 +140,7 @@
                             "relationName": "location",
                             "relationType": "zeroToOne",
                             "relationWire": "[wired]",
-                            "renderType": "selectSingleBox",
+                            "renderType": "selectSingle",
                             "uid": "121364910646"
                         },
                         {
@@ -320,7 +320,7 @@
                             "relationName": "address",
                             "relationType": "zeroToOne",
                             "relationWire": "[wired]",
-                            "renderType": "selectSingleBox",
+                            "renderType": "selectSingle",
                             "uid": "1110778452989"
                         }
                     ]
@@ -491,8 +491,8 @@
         },
         "extensionKey": "planning_app",
         "name": "Planning App",
-        "originalExtensionKey": "",
-        "originalVendorName": "",
+        "originalExtensionKey": "planning_app",
+        "originalVendorName": "OliverHader",
         "persons": [],
         "plugins": [
             {
@@ -571,7 +571,7 @@
         }
     ],
     "log": {
-        "last_modified": "2018-11-20 01:14",
+        "last_modified": "2018-11-20 02:20",
         "extension_builder_version": "9.10.0",
         "be_user": " (1)"
     }

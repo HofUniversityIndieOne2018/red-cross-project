@@ -74,6 +74,9 @@ return [
         'extension_builder' => [
             'packagePath' => 'typo3conf/ext/extension_builder/',
         ],
+        'planning_app' => [
+            'packagePath' => 'typo3conf/ext/planning_app/',
+        ],
     ],
     'version' => 5,
 ];
