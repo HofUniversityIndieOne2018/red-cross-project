@@ -8,6 +8,9 @@
 ### PAGE ###
 ############
 page {
+    preloader {
+        enable = 0
+    }
     logo {
         file = EXT:red_cross_site/Resources/Public/Images/redcross_logo.svg
         fileInverted = EXT:red_cross_site/Resources/Public/Images/redcross_logo_inverted.svg
