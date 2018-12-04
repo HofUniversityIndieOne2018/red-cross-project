@@ -1,5 +1,5 @@
 
-plugin.tx_planningapp_dashboard {
+plugin.tx_planningapp {
     view {
         # cat=plugin.tx_planningapp_dashboard/file; type=string; label=Path to template root (FE)
         templateRootPath = EXT:planning_app/Resources/Private/Templates/

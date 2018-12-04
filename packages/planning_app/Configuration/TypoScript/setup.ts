@@ -1,15 +1,15 @@
 
-plugin.tx_planningapp_dashboard {
+plugin.tx_planningapp {
     view {
         templateRootPaths.0 = EXT:planning_app/Resources/Private/Templates/
-        templateRootPaths.1 = {$plugin.tx_planningapp_dashboard.view.templateRootPath}
+        templateRootPaths.1 = {$plugin.tx_planningapp.view.templateRootPath}
         partialRootPaths.0 = EXT:planning_app/Resources/Private/Partials/
-        partialRootPaths.1 = {$plugin.tx_planningapp_dashboard.view.partialRootPath}
+        partialRootPaths.1 = {$plugin.tx_planningapp.view.partialRootPath}
         layoutRootPaths.0 = EXT:planning_app/Resources/Private/Layouts/
-        layoutRootPaths.1 = {$plugin.tx_planningapp_dashboard.view.layoutRootPath}
+        layoutRootPaths.1 = {$plugin.tx_planningapp.view.layoutRootPath}
     }
     persistence {
-        storagePid = {$plugin.tx_planningapp_dashboard.persistence.storagePid}
+        #storagePid = {$plugin.tx_planningapp.persistence.storagePid}
         #recursive = 1
     }
     features {
