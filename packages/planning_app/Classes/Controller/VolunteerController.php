@@ -1,6 +1,8 @@
 <?php
 namespace OliverHader\PlanningApp\Controller;
 
+use OliverHader\PlanningApp\Domain\Model\Volunteer;
+
 /***
  *
  * This file is part of the "Planning App" Extension for TYPO3 CMS.
@@ -18,17 +20,12 @@ namespace OliverHader\PlanningApp\Controller;
 class VolunteerController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
     /**
-     * volunteerRepository
-     *
      * @var \OliverHader\PlanningApp\Domain\Repository\VolunteerRepository
      * @inject
      */
     protected $volunteerRepository = null;
 
     /**
-     * action list
-     *
-     * @return void
      */
     public function listAction()
     {
@@ -37,12 +34,9 @@ class VolunteerController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
     }
 
     /**
-     * action show
-     *
-     * @param \OliverHader\PlanningApp\Domain\Model\Volunteer $volunteer
-     * @return void
+     * @param Volunteer $volunteer
      */
-    public function showAction(\OliverHader\PlanningApp\Domain\Model\Volunteer $volunteer)
+    public function showAction(Volunteer $volunteer)
     {
         $this->view->assign('volunteer', $volunteer);
     }
@@ -60,10 +54,10 @@ class VolunteerController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
     /**
      * action create
      *
-     * @param \OliverHader\PlanningApp\Domain\Model\Volunteer $newVolunteer
+     * @param Volunteer $newVolunteer
      * @return void
      */
-    public function createAction(\OliverHader\PlanningApp\Domain\Model\Volunteer $newVolunteer)
+    public function createAction(Volunteer $newVolunteer)
     {
         $this->addFlashMessage('The object was created. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/typo3cms/extensions/extension_builder/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
         $this->volunteerRepository->add($newVolunteer);
@@ -73,11 +67,11 @@ class VolunteerController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
     /**
      * action edit
      *
-     * @param \OliverHader\PlanningApp\Domain\Model\Volunteer $volunteer
+     * @param Volunteer $volunteer
      * @ignorevalidation $volunteer
      * @return void
      */
-    public function editAction(\OliverHader\PlanningApp\Domain\Model\Volunteer $volunteer)
+    public function editAction(Volunteer $volunteer)
     {
         $this->view->assign('volunteer', $volunteer);
     }
@@ -85,10 +79,10 @@ class VolunteerController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
     /**
      * action update
      *
-     * @param \OliverHader\PlanningApp\Domain\Model\Volunteer $volunteer
+     * @param Volunteer $volunteer
      * @return void
      */
-    public function updateAction(\OliverHader\PlanningApp\Domain\Model\Volunteer $volunteer)
+    public function updateAction(Volunteer $volunteer)
     {
         $this->addFlashMessage('The object was updated. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/typo3cms/extensions/extension_builder/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
         $this->volunteerRepository->update($volunteer);
@@ -98,10 +92,10 @@ class VolunteerController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
     /**
      * action delete
      *
-     * @param \OliverHader\PlanningApp\Domain\Model\Volunteer $volunteer
+     * @param Volunteer $volunteer
      * @return void
      */
-    public function deleteAction(\OliverHader\PlanningApp\Domain\Model\Volunteer $volunteer)
+    public function deleteAction(Volunteer $volunteer)
     {
         $this->addFlashMessage('The object was deleted. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/typo3cms/extensions/extension_builder/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
         $this->volunteerRepository->remove($volunteer);
