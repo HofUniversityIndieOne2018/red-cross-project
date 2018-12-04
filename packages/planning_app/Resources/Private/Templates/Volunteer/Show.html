@@ -6,6 +6,19 @@
 
 		<f:flashMessages />
 		<f:render partial="Volunteer/Properties" arguments="{volunteer:volunteer}" />
+
+		<h2>Activities</h2>
+		<ul>
+		<f:for each="{activities}" as="activity">
+			<li>
+				<f:link.action action="show" controller="Activity"
+							   arguments="{activity:activity}">
+					{activity.title}
+				</f:link.action>
+			</li>
+		</f:for>
+		</ul>
+
 		<f:link.action action="list">Back to list</f:link.action><br />
 		<f:link.action action="new">New Volunteer</f:link.action>
 	</f:section>

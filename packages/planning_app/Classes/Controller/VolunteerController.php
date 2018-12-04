@@ -2,6 +2,7 @@
 namespace OliverHader\PlanningApp\Controller;
 
 use OliverHader\PlanningApp\Domain\Model\Volunteer;
+use OliverHader\PlanningApp\Domain\Repository\ActivityRepository;
 use OliverHader\PlanningApp\Domain\Repository\VolunteerRepository;
 
 /***
@@ -26,11 +27,24 @@ class VolunteerController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
     protected $volunteerRepository = null;
 
     /**
+     * @var ActivityRepository
+     */
+    protected $activityRepository;
+
+    /**
      * @param VolunteerRepository $volunteerRepository
      */
     public function injectVolunteerRepository(VolunteerRepository $volunteerRepository)
     {
         $this->volunteerRepository = $volunteerRepository;
+    }
+
+    /**
+     * @param ActivityRepository $activityRepository
+     */
+    public function injectActivityRepository(ActivityRepository $activityRepository)
+    {
+        $this->activityRepository = $activityRepository;
     }
 
     /**
@@ -46,7 +60,11 @@ class VolunteerController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
      */
     public function showAction(Volunteer $volunteer)
     {
-        $this->view->assign('volunteer', $volunteer);
+        $activities = $this->activityRepository->findByVolunteer($volunteer);
+        $this->view->assignMultiple([
+            'volunteer' => $volunteer,
+            'activities' => $activities,
+        ]);
     }
 
     /**
