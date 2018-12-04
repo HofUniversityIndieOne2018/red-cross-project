@@ -18,6 +18,12 @@ namespace OliverHader\PlanningApp\Domain\Model;
 class Resource extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
     /**
+     * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
+     * @cascade remove
+     */
+    protected $image = null;
+
+    /**
      * Title
      *
      * @var string
@@ -44,5 +50,26 @@ class Resource extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setTitle($title)
     {
         $this->title = $title;
+    }
+
+    /**
+     * Returns the image
+     *
+     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Sets the image
+     *
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
+     * @return void
+     */
+    public function setImage(\TYPO3\CMS\Extbase\Domain\Model\FileReference $image)
+    {
+        $this->image = $image;
     }
 }

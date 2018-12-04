@@ -465,6 +465,17 @@
                             "propertyName": "title",
                             "propertyType": "String",
                             "uid": "1240265714828"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Image",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "image",
+                            "propertyType": "Image",
+                            "uid": "984715674397"
                         }
                     ]
                 },
@@ -571,7 +582,7 @@
         }
     ],
     "log": {
-        "last_modified": "2018-11-20 02:20",
+        "last_modified": "2018-12-04 06:02",
         "extension_builder_version": "9.10.0",
         "be_user": " (1)"
     }

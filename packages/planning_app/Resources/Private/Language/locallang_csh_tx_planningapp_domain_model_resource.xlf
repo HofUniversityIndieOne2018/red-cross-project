@@ -6,6 +6,9 @@
 			<trans-unit id="title.description">
 				<source>Title</source>
 			</trans-unit>
+			<trans-unit id="image.description">
+				<source>Image</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

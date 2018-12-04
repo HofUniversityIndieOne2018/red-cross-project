@@ -66,6 +66,7 @@ CREATE TABLE tx_planningapp_domain_model_address (
 CREATE TABLE tx_planningapp_domain_model_resource (
 
 	title varchar(255) DEFAULT '' NOT NULL,
+	image int(11) unsigned NOT NULL default '0',
 
 );
 

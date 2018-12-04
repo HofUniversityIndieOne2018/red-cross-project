@@ -84,6 +84,9 @@
 			<trans-unit id="tx_planningapp_domain_model_resource.title">
 				<source>Title</source>
 			</trans-unit>
+			<trans-unit id="tx_planningapp_domain_model_resource.image">
+				<source>Image</source>
+			</trans-unit>
 			<trans-unit id="tx_planning_app_dashboard.name">
 				<source>Dashboard</source>
 			</trans-unit>
