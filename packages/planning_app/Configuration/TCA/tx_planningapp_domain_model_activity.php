@@ -129,7 +129,8 @@ return [
             'exclude' => true,
             'label' => 'LLL:EXT:planning_app/Resources/Private/Language/locallang_db.xlf:tx_planningapp_domain_model_activity.location',
             'config' => [
-                'type' => 'inline',
+                'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
                 'foreign_table' => 'tx_planningapp_domain_model_location',
                 'minitems' => 0,
                 'maxitems' => 1,
