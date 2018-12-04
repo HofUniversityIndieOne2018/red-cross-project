@@ -8,7 +8,6 @@
 
 		<table  class="tx_planningapp" >
 			<tr>
-				<th><f:translate key="tx_planningapp_domain_model_volunteer.user" /></th>
 				<th><f:translate key="tx_planningapp_domain_model_volunteer.first_name" /></th>
 				<th><f:translate key="tx_planningapp_domain_model_volunteer.last_name" /></th>
 				<th><f:translate key="tx_planningapp_domain_model_volunteer.date_of_birth" /></th>
@@ -18,7 +17,6 @@
 
 			<f:for each="{volunteers}" as="volunteer">
 				<tr>
-					<td><f:link.action action="show" arguments="{volunteer : volunteer}"> {volunteer.user}</f:link.action></td>
 					<td><f:link.action action="show" arguments="{volunteer : volunteer}"> {volunteer.firstName}</f:link.action></td>
 					<td><f:link.action action="show" arguments="{volunteer : volunteer}"> {volunteer.lastName}</f:link.action></td>
 					<td><f:link.action action="show" arguments="{volunteer : volunteer}"> {volunteer.dateOfBirth -> f:format.date()}</f:link.action></td>
