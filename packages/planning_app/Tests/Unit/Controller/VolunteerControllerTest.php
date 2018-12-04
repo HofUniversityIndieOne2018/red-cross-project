@@ -7,14 +7,14 @@ namespace OliverHader\PlanningApp\Tests\Unit\Controller;
 class VolunteerControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 {
     /**
-     * @var \OliverHader\PlanningApp\Controller\VolunteerController
+     * @var \OliverHader\PlanningApp\Controller\DashboardController
      */
     protected $subject = null;
 
     protected function setUp()
     {
         parent::setUp();
-        $this->subject = $this->getMockBuilder(\OliverHader\PlanningApp\Controller\VolunteerController::class)
+        $this->subject = $this->getMockBuilder(\OliverHader\PlanningApp\Controller\DashboardController::class)
             ->setMethods(['redirect', 'forward', 'addFlashMessage'])
             ->disableOriginalConstructor()
             ->getMock();

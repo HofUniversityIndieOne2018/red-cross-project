@@ -5,6 +5,26 @@
 			<f:translate key="tx_planningapp_domain_model_activity.title" />
 		</td>
 		<td>
+			{activity.title}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_planningapp_domain_model_activity.volunteers" />
+		</td>
+		<td>
+			<f:if condition="{activity.volunteers}">
+				<f:then>
+					<ol>
+						<f:for each="{activity.volunteers}" as="volunteer">
+							<li>{volunteer.lastName}, {volunteer.firstName}</li>
+						</f:for>
+					</ol>
+				</f:then>
+				<f:else>
+					No volunteers assigned, yet.
+				</f:else>
+			</f:if>
 		</td>
 	</tr>
 </table>

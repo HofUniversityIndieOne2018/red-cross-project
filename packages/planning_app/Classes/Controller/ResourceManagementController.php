@@ -1,7 +1,9 @@
 <?php
 namespace OliverHader\PlanningApp\Controller;
 
-use OliverHader\PlanningApp\Domain\Repository\ActivityRepository;
+use OliverHader\PlanningApp\Domain\Model\Resource;
+use OliverHader\PlanningApp\Domain\Repository\ResourceRepository;
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /***
  * This file is part of the "Planning App" Extension for TYPO3 CMS.
@@ -10,22 +12,19 @@ use OliverHader\PlanningApp\Domain\Repository\ActivityRepository;
  * LICENSE.txt file that was distributed with this source code.
  ***/
 
-/**
- * ActivityController
- */
-class ActivityController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class ResourceManagementController extends ActionController
 {
     /**
-     * @var ActivityRepository
+     * @var ResourceRepository
      */
-    protected $activityRepository = null;
+    protected $resourceRepository = null;
 
     /**
-     * @param ActivityRepository $activityRepository
+     * @param ResourceRepository $resourceRepository
      */
-    public function injectActivityRepository(ActivityRepository $activityRepository)
+    public function injectResourceRepository(ResourceRepository $resourceRepository)
     {
-        $this->activityRepository = $activityRepository;
+        $this->resourceRepository = $resourceRepository;
     }
 
     /**
@@ -35,19 +34,19 @@ class ActivityController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
      */
     public function listAction()
     {
-        $activities = $this->activityRepository->findAll();
-        $this->view->assign('activities', $activities);
+        $resources = $this->resourceRepository->findAll();
+        $this->view->assign('resources', $resources);
     }
 
     /**
      * action show
      *
-     * @param \OliverHader\PlanningApp\Domain\Model\Activity $activity
+     * @param Resource $resource
      * @return void
      */
-    public function showAction(\OliverHader\PlanningApp\Domain\Model\Activity $activity)
+    public function showAction(Resource $resource)
     {
-        $this->view->assign('activity', $activity);
+        $this->view->assign('resource', $resource);
     }
 
     /**
@@ -63,51 +62,52 @@ class ActivityController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
     /**
      * action create
      *
-     * @param \OliverHader\PlanningApp\Domain\Model\Activity $newActivity
+     * @param Resource $newResource
      * @return void
      */
-    public function createAction(\OliverHader\PlanningApp\Domain\Model\Activity $newActivity)
+    public function createAction(Resource $newResource)
     {
         $this->addFlashMessage('The object was created. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/typo3cms/extensions/extension_builder/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
-        $this->activityRepository->add($newActivity);
+        $this->resourceRepository->add($newResource);
         $this->redirect('list');
     }
 
     /**
      * action edit
      *
-     * @param \OliverHader\PlanningApp\Domain\Model\Activity $activity
-     * @ignorevalidation $activity
+     * @param Resource $resource
+     * @ignorevalidation $resource
      * @return void
      */
-    public function editAction(\OliverHader\PlanningApp\Domain\Model\Activity $activity)
+    public function editAction(Resource $resource)
     {
-        $this->view->assign('activity', $activity);
+        $this->view->assign('resource', $resource);
     }
 
     /**
      * action update
      *
-     * @param \OliverHader\PlanningApp\Domain\Model\Activity $activity
+     * @param Resource $resource
      * @return void
      */
-    public function updateAction(\OliverHader\PlanningApp\Domain\Model\Activity $activity)
+    public function updateAction(Resource $resource)
     {
         $this->addFlashMessage('The object was updated. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/typo3cms/extensions/extension_builder/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
-        $this->activityRepository->update($activity);
-        $this->redirect('list');
+        $this->resourceRepository->update($resource);
+        var_dump($resource->getImage());
+        #$this->redirect('list');
     }
 
     /**
      * action delete
      *
-     * @param \OliverHader\PlanningApp\Domain\Model\Activity $activity
+     * @param Resource $resource
      * @return void
      */
-    public function deleteAction(\OliverHader\PlanningApp\Domain\Model\Activity $activity)
+    public function deleteAction(Resource $resource)
     {
         $this->addFlashMessage('The object was deleted. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/typo3cms/extensions/extension_builder/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
-        $this->activityRepository->remove($activity);
+        $this->resourceRepository->remove($resource);
         $this->redirect('list');
     }
 }

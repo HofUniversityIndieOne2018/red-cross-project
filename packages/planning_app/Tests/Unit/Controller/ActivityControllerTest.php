@@ -7,14 +7,14 @@ namespace OliverHader\PlanningApp\Tests\Unit\Controller;
 class ActivityControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 {
     /**
-     * @var \OliverHader\PlanningApp\Controller\ActivityController
+     * @var \OliverHader\PlanningApp\Controller\ActivityManagementController
      */
     protected $subject = null;
 
     protected function setUp()
     {
         parent::setUp();
-        $this->subject = $this->getMockBuilder(\OliverHader\PlanningApp\Controller\ActivityController::class)
+        $this->subject = $this->getMockBuilder(\OliverHader\PlanningApp\Controller\ActivityManagementController::class)
             ->setMethods(['redirect', 'forward', 'addFlashMessage'])
             ->disableOriginalConstructor()
             ->getMock();

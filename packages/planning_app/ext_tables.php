@@ -11,6 +11,12 @@ call_user_func(
             'Dashboard'
         );
 
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+            'OliverHader.PlanningApp',
+            'Management',
+            'Management'
+        );
+
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('planning_app', 'Configuration/TypoScript', 'Planning App');
 
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_planningapp_domain_model_volunteer', 'EXT:planning_app/Resources/Private/Language/locallang_csh_tx_planningapp_domain_model_volunteer.xlf');

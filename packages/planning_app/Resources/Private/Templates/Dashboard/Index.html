@@ -1,0 +1,19 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:layout name="Dashboard" />
+
+	<f:section name="content">
+		<h1>Dashboard</h1>
+
+		<f:flashMessages />
+
+		<h2>Next activities</h2>
+		<f:if condition="{activities}">
+			<f:then>
+				<f:render partial="Dashboard/ListActivities" arguments="{_all}" />
+			</f:then>
+			<f:else>
+				You're not subscribed to any activity.
+			</f:else>
+		</f:if>
+	</f:section>
+</html>

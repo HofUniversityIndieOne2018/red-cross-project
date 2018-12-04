@@ -7,14 +7,14 @@ namespace OliverHader\PlanningApp\Tests\Unit\Controller;
 class LocationControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 {
     /**
-     * @var \OliverHader\PlanningApp\Controller\LocationController
+     * @var \OliverHader\PlanningApp\Controller\LocationManagementController
      */
     protected $subject = null;
 
     protected function setUp()
     {
         parent::setUp();
-        $this->subject = $this->getMockBuilder(\OliverHader\PlanningApp\Controller\LocationController::class)
+        $this->subject = $this->getMockBuilder(\OliverHader\PlanningApp\Controller\LocationManagementController::class)
             ->setMethods(['redirect', 'forward', 'addFlashMessage'])
             ->disableOriginalConstructor()
             ->getMock();

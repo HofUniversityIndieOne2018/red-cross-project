@@ -8,7 +8,7 @@
 
     <f:render partial="FormErrors" />
 
-    <f:form action="update" name="resource" object="{resource}" >
+    <f:form action="update" name="resource" object="{resource}" enctype="multipart/form-data">
     <f:render partial="Resource/FormFields" arguments="{resource:resource}" />
     <f:form.submit value="Save" />
     </f:form>

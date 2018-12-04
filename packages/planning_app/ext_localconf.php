@@ -4,22 +4,33 @@ defined('TYPO3_MODE') || die('Access denied.');
 call_user_func(
     function()
     {
-
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
             'OliverHader.PlanningApp',
             'Dashboard',
             [
-                'Volunteer' => 'list, show, new, create, edit, update, delete',
-                'Activity' => 'list, show, new, create, edit, update, delete',
-                'Location' => 'list, show, new, create, edit, update, delete',
-                'Resource' => 'list, show, new, create, edit, update, delete'
+                'Dashboard' => 'index, editProfile, updateProfile, myActivities, allActivities, showActivity, subscribe, unsubscribe',
             ],
             // non-cacheable actions
             [
-                'Volunteer' => 'create, update, delete',
-                'Activity' => 'create, update, delete',
-                'Location' => 'create, update, delete',
-                'Resource' => 'create, update, delete'
+                'Dashboard' => 'index, editProfile, updateProfile, myActivities, allActivities, showActivity, subscribe, unsubscribe',
+            ]
+        );
+
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+            'OliverHader.PlanningApp',
+            'Management',
+            [
+                'ActivityManagement' => 'list, show, new, create, edit, update, delete',
+                'VolunteerManagement' => 'list, show, new, create, edit, update, delete',
+                'ResourceManagement' => 'list, show, new, create, edit, update, delete',
+                'LocationManagement' => 'list, show, new, create, edit, update, delete'
+            ],
+            // non-cacheable actions
+            [
+                'ActivityManagement' => 'create, update, delete',
+                'VolunteerManagement' => 'create, update, delete',
+                'ResourceManagement' => 'create, update, delete',
+                'LocationManagement' => 'create, update, delete',
             ]
         );
 

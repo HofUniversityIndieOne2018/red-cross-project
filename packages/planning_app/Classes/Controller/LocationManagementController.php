@@ -13,7 +13,7 @@ use OliverHader\PlanningApp\Domain\Repository\LocationRepository;
 /**
  * LocationController
  */
-class LocationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class LocationManagementController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
     /**
      * @var LocationRepository

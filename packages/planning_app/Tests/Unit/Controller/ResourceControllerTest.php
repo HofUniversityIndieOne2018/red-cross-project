@@ -7,14 +7,14 @@ namespace OliverHader\PlanningApp\Tests\Unit\Controller;
 class ResourceControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 {
     /**
-     * @var \OliverHader\PlanningApp\Controller\ResourceController
+     * @var \OliverHader\PlanningApp\Controller\ResourceManagementController
      */
     protected $subject = null;
 
     protected function setUp()
     {
         parent::setUp();
-        $this->subject = $this->getMockBuilder(\OliverHader\PlanningApp\Controller\ResourceController::class)
+        $this->subject = $this->getMockBuilder(\OliverHader\PlanningApp\Controller\ResourceManagementController::class)
             ->setMethods(['redirect', 'forward', 'addFlashMessage'])
             ->disableOriginalConstructor()
             ->getMock();

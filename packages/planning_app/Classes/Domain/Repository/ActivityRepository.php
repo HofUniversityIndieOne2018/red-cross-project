@@ -21,15 +21,20 @@ class ActivityRepository extends Repository
 {
     /**
      * @param Volunteer $volunteer
+     * @param null|int $limit
      * @return QueryResultInterface|Activity[]
      * @throws InvalidQueryException
      */
-    public function findByVolunteer(Volunteer $volunteer)
+    public function findByVolunteer(Volunteer $volunteer, int $limit = null)
     {
         $query = $this->createQuery();
         $query->matching(
             $query->contains('volunteers', $volunteer)
         );
+        if ($limit !== null) {
+            $query->setLimit($limit);
+        }
+        return $query->execute();
         return $query->execute();
     }
 }
