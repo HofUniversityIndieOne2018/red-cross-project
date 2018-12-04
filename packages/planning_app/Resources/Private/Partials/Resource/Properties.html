@@ -5,6 +5,24 @@
 			<f:translate key="tx_planningapp_domain_model_resource.title" />
 		</td>
 		<td>
+			{resource.title}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_planningapp_domain_model_resource.image" />
+		</td>
+		<td>
+			<f:if condition="{resource.image}">
+				<f:then>
+					<f:image image="{resource.image}" maxWidth="400"/>
+				</f:then>
+				<f:else>
+					<div style="background: #ccc; padding: 1em">
+						No image available
+					</div>
+				</f:else>
+			</f:if>
 		</td>
 	</tr>
 </table>
