@@ -1,6 +1,8 @@
 <?php
 namespace OliverHader\PlanningApp\Controller;
 
+use OliverHader\PlanningApp\Domain\Repository\LocationRepository;
+
 /***
  * This file is part of the "Planning App" Extension for TYPO3 CMS.
  *
@@ -14,12 +16,17 @@ namespace OliverHader\PlanningApp\Controller;
 class LocationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
     /**
-     * locationRepository
-     *
-     * @var \OliverHader\PlanningApp\Domain\Repository\LocationRepository
-     * @inject
+     * @var LocationRepository
      */
     protected $locationRepository = null;
+
+    /**
+     * @param LocationRepository $locationRepository
+     */
+    public function injectLocationRepository(LocationRepository $locationRepository)
+    {
+        $this->locationRepository = $locationRepository;
+    }
 
     /**
      * action list

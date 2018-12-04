@@ -1,6 +1,8 @@
 <?php
 namespace OliverHader\PlanningApp\Controller;
 
+use OliverHader\PlanningApp\Domain\Repository\ActivityRepository;
+
 /***
  * This file is part of the "Planning App" Extension for TYPO3 CMS.
  *
@@ -14,12 +16,17 @@ namespace OliverHader\PlanningApp\Controller;
 class ActivityController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
     /**
-     * activityRepository
-     *
-     * @var \OliverHader\PlanningApp\Domain\Repository\ActivityRepository
-     * @inject
+     * @var ActivityRepository
      */
     protected $activityRepository = null;
+
+    /**
+     * @param ActivityRepository $activityRepository
+     */
+    public function injectActivityRepository(ActivityRepository $activityRepository)
+    {
+        $this->activityRepository = $activityRepository;
+    }
 
     /**
      * action list

@@ -2,6 +2,7 @@
 namespace OliverHader\PlanningApp\Controller;
 
 use OliverHader\PlanningApp\Domain\Model\Volunteer;
+use OliverHader\PlanningApp\Domain\Repository\VolunteerRepository;
 
 /***
  *
@@ -20,10 +21,17 @@ use OliverHader\PlanningApp\Domain\Model\Volunteer;
 class VolunteerController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
     /**
-     * @var \OliverHader\PlanningApp\Domain\Repository\VolunteerRepository
-     * @inject
+     * @var VolunteerRepository
      */
     protected $volunteerRepository = null;
+
+    /**
+     * @param VolunteerRepository $volunteerRepository
+     */
+    public function injectVolunteerRepository(VolunteerRepository $volunteerRepository)
+    {
+        $this->volunteerRepository = $volunteerRepository;
+    }
 
     /**
      */

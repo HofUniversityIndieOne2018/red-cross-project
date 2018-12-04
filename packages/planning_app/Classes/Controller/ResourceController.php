@@ -1,6 +1,8 @@
 <?php
 namespace OliverHader\PlanningApp\Controller;
 
+use OliverHader\PlanningApp\Domain\Repository\ResourceRepository;
+
 /***
  * This file is part of the "Planning App" Extension for TYPO3 CMS.
  *
@@ -14,12 +16,17 @@ namespace OliverHader\PlanningApp\Controller;
 class ResourceController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
     /**
-     * resourceRepository
-     *
-     * @var \OliverHader\PlanningApp\Domain\Repository\ResourceRepository
-     * @inject
+     * @var ResourceRepository
      */
     protected $resourceRepository = null;
+
+    /**
+     * @param ResourceRepository $resourceRepository
+     */
+    public function injectResourceRepository(ResourceRepository $resourceRepository)
+    {
+        $this->resourceRepository = $resourceRepository;
+    }
 
     /**
      * action list
