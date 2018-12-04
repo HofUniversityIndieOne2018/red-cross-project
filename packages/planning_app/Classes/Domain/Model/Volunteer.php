@@ -2,14 +2,10 @@
 namespace OliverHader\PlanningApp\Domain\Model;
 
 /***
- *
  * This file is part of the "Planning App" Extension for TYPO3 CMS.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
- *
- *  (c) 2018
- *
  ***/
 
 /**
@@ -20,9 +16,9 @@ class Volunteer extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Frontend User
      *
-     * @var int
+     * @var \TYPO3\CMS\Extbase\Domain\Model\FrontendUser
      */
-    protected $user = 0;
+    protected $user;
 
     /**
      * First name
@@ -51,7 +47,7 @@ class Volunteer extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the user
      *
-     * @return int $user
+     * @return \TYPO3\CMS\Extbase\Domain\Model\FrontendUser
      */
     public function getUser()
     {
@@ -61,10 +57,10 @@ class Volunteer extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the user
      *
-     * @param int $user
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FrontendUser
      * @return void
      */
-    public function setUser($user)
+    public function setUser(\TYPO3\CMS\Extbase\Domain\Model\FrontendUser $user)
     {
         $this->user = $user;
     }

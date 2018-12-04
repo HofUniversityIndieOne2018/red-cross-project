@@ -4,16 +4,13 @@ namespace OliverHader\PlanningApp\Controller;
 use OliverHader\PlanningApp\Domain\Model\Volunteer;
 use OliverHader\PlanningApp\Domain\Repository\ActivityRepository;
 use OliverHader\PlanningApp\Domain\Repository\VolunteerRepository;
+use OliverHader\SessionService\SubjectResolver;
 
 /***
- *
  * This file is part of the "Planning App" Extension for TYPO3 CMS.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
- *
- *  (c) 2018
- *
  ***/
 
 /**
@@ -32,6 +29,11 @@ class VolunteerController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
     protected $activityRepository;
 
     /**
+     * @var Volunteer
+     */
+    private $currentVolunteer;
+
+    /**
      * @param VolunteerRepository $volunteerRepository
      */
     public function injectVolunteerRepository(VolunteerRepository $volunteerRepository)
@@ -47,12 +49,20 @@ class VolunteerController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
         $this->activityRepository = $activityRepository;
     }
 
+    public function initializeAction()
+    {
+        parent::initializeAction();
+        $this->currentVolunteer = SubjectResolver::get()
+            ->forClassName(Volunteer::class)
+            ->forPropertyName('user')
+            ->resolve();
+    }
+
     /**
      */
     public function listAction()
     {
-        $volunteers = $this->volunteerRepository->findAll();
-        $this->view->assign('volunteers', $volunteers);
+        $this->view->assign('volunteers', [$this->currentVolunteer]);
     }
 
     /**
@@ -60,8 +70,14 @@ class VolunteerController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
      */
     public function showAction(Volunteer $volunteer)
     {
+        if ($this->currentVolunteer->getUid() !== $volunteer->getUid()) {
+            $this->addErrorFlashMessage('Insufficient permissions');
+            $this->redirect('list');
+        }
+
         $activities = $this->activityRepository->findByVolunteer($volunteer);
         $this->view->assignMultiple([
+            'allowed' => true,
             'volunteer' => $volunteer,
             'activities' => $activities,
         ]);

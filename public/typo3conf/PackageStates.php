@@ -44,6 +44,9 @@ return [
         'extensionmanager' => [
             'packagePath' => 'typo3/sysext/extensionmanager/',
         ],
+        'felogin' => [
+            'packagePath' => 'typo3/sysext/felogin/',
+        ],
         'filelist' => [
             'packagePath' => 'typo3/sysext/filelist/',
         ],
@@ -76,6 +79,9 @@ return [
         ],
         'planning_app' => [
             'packagePath' => 'typo3conf/ext/planning_app/',
+        ],
+        'session_service' => [
+            'packagePath' => 'typo3conf/ext/session_service/',
         ],
     ],
     'version' => 5,

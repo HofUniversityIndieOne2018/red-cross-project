@@ -65,3 +65,10 @@ plugin.bootstrap_package.settings.scss {
     primary = #eb3e4a
     secondary = #013859
 }
+
+###
+# Frontend Login constants
+###
+styles.content.loginform {
+    templateFile = EXT:red_cross_site/Resources/Private/Templates/Extensions/FrontendLogin.html
+}

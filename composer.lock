@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fe392ebfbba94c4bf0961000477fa741",
+    "content-hash": "171b14ff70343f419d283b3e23f748cf",
     "packages": [
         {
             "name": "bk2k/bootstrap-package",
@@ -1285,6 +1285,39 @@
             "keywords": [
                 "TYPO3 CMS"
             ]
+        },
+        {
+            "name": "oliver-hader/session-service",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ohader/session-service.git",
+                "reference": "d5d3f3c86097170e009475cca022827166053293"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ohader/session-service/zipball/d5d3f3c86097170e009475cca022827166053293",
+                "reference": "d5d3f3c86097170e009475cca022827166053293",
+                "shasum": ""
+            },
+            "require": {
+                "typo3/cms-core": "^9.5"
+            },
+            "replace": {
+                "session_service": "self.version"
+            },
+            "type": "typo3-cms-extension",
+            "autoload": {
+                "psr-4": {
+                    "OliverHader\\SessionService\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "TYPO3 Extbase session & frontend user service",
+            "time": "2018-12-04T18:45:20+00:00"
         },
         {
             "name": "psr/cache",
@@ -2835,6 +2868,61 @@
                 }
             ],
             "description": "TYPO3 Extension Manager",
+            "homepage": "https://typo3.org",
+            "time": "2018-10-30T10:45:30+00:00"
+        },
+        {
+            "name": "typo3/cms-felogin",
+            "version": "v9.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TYPO3-CMS/felogin.git",
+                "reference": "3dc23da809660e5836ed7663ca5933cf024fc986"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TYPO3-CMS/felogin/zipball/3dc23da809660e5836ed7663ca5933cf024fc986",
+                "reference": "3dc23da809660e5836ed7663ca5933cf024fc986",
+                "shasum": ""
+            },
+            "require": {
+                "typo3/cms-core": "9.5.1"
+            },
+            "conflict": {
+                "typo3/cms": "*"
+            },
+            "replace": {
+                "felogin": "*"
+            },
+            "type": "typo3-cms-framework",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "9.5.x-dev"
+                },
+                "typo3/cms": {
+                    "Package": {
+                        "partOfFactoryDefault": true
+                    },
+                    "extension-key": "felogin"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "TYPO3\\CMS\\Felogin\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "TYPO3 Core Team",
+                    "email": "typo3cms@typo3.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A template-based plugin to log in Website Users in the Frontend",
             "homepage": "https://typo3.org",
             "time": "2018-10-30T10:45:30+00:00"
         },

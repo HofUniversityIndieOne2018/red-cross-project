@@ -120,9 +120,9 @@ return [
             'exclude' => true,
             'label' => 'LLL:EXT:planning_app/Resources/Private/Language/locallang_db.xlf:tx_planningapp_domain_model_volunteer.user',
             'config' => [
-                'type' => 'input',
-                'size' => 4,
-                'eval' => 'int'
+                'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
+                'foreign_table' => 'fe_users',
             ]
         ],
         'first_name' => [
