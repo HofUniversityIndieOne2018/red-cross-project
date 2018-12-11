@@ -27,3 +27,51 @@ routes:
     route: robots.txt
     type: staticText
     content: "User-agent: *\r\nDisallow: /typo3/\r\n"
+
+routeEnhancers:
+  PlanningDashboard:
+    type: Extbase
+    extension: PlanningApp
+    plugin: Dashboard
+    defaultController: 'Dashboard::index'
+
+    routes:
+      -
+        routePath: '/dashboard'
+        _controller: 'Dashboard::index'
+      -
+        routePath: '/dashboard/my'
+        _controller: 'Dashboard::myActivities'
+      -
+        routePath: '/dashboard/all'
+        _controller: 'Dashboard::allActivities'
+      -
+        routePath: '/dashboard/activity/{activity}/{previousAction}'
+        _controller: 'Dashboard::showActivity'
+      -
+        # @todo calendar is not implemented, yet
+        routePath: '/dashboard/calendar/{year}/{month}'
+        _controller: 'Dashboard::calendar'
+
+    defaults:
+      previousAction: none
+
+    aspects:
+      activity:
+        type: PersistedAliasMapper
+        tableName: tx_planningapp_domain_model_activity
+        routeFieldName: uid
+      previousAction:
+        type: StaticValueMapper
+        map:
+          my: myActivities
+          all: allActivities
+          none: ''
+      year:
+        type: StaticRangeMapper
+        start: '2010'
+        end: '2025'
+      month:
+        type: StaticRangeMapper
+        start: '1'
+        end: '12'
