@@ -9,8 +9,8 @@ call_user_func(function() {
         $dotEnvPath = '.env';
     }
 
-    $loader = new \Dotenv\Dotenv($projectRootPath, $dotEnvFile);
-    $loader->overload();
+    $loader = new \Symfony\Component\Dotenv\Dotenv();
+    $loader->overload($projectRootPath . '/' . $dotEnvFile);
 });
 
 

@@ -34,7 +34,8 @@
         "oliver-hader/planning-app": "^1.0",
         "typo3/cms-felogin": "^9.5",
         "oliver-hader/session-service": "^1.0",
-        "vlucas/phpdotenv": "^2.5"
+        "vlucas/phpdotenv": "^2.5",
+        "symfony/dotenv": "^4.2"
     },
     "extra": {
         "patches": {
