@@ -1,9 +1,10 @@
 rootPageId: 1
-base: 'http://red-cross-project.ddev.local/'
-baseVariants:
-  -
-    base: 'https://red-cross.project.anyhost.it/'
-    condition: 'getenv("context") == "production"'
+base: '%env(SITE_INTRODUCTION_BASE)'
+# baseVariants not required anymore due to .env settings
+# baseVariants:
+#   -
+#     base: 'https://red-cross.project.anyhost.it/'
+#     condition: 'getenv("context") == "production"'
 languages:
   -
     title: English

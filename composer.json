@@ -33,7 +33,8 @@
         "cweagans/composer-patches": "^1.6",
         "oliver-hader/planning-app": "^1.0",
         "typo3/cms-felogin": "^9.5",
-        "oliver-hader/session-service": "^1.0"
+        "oliver-hader/session-service": "^1.0",
+        "vlucas/phpdotenv": "^2.5"
     },
     "extra": {
         "patches": {
