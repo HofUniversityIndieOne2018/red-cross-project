@@ -6,7 +6,7 @@ call_user_func(function() {
 
     $dotEnvFile = '.env.dist';
     if (file_exists($projectRootPath . '/.env')) {
-        $dotEnvPath = '.env';
+        $dotEnvFile = '.env';
     }
 
     $loader = new \Symfony\Component\Dotenv\Dotenv();

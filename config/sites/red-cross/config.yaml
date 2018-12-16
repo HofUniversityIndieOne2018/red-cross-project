@@ -1,5 +1,5 @@
 rootPageId: 1
-base: '%env(SITE_INTRODUCTION_BASE)'
+base: '%env(SITE_MAIN_BASE)%'
 # baseVariants not required anymore due to .env settings
 # baseVariants:
 #   -
