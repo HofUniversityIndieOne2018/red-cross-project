@@ -35,7 +35,8 @@
         "typo3/cms-felogin": "^9.5",
         "oliver-hader/session-service": "^1.0",
         "vlucas/phpdotenv": "^2.5",
-        "symfony/dotenv": "^4.2"
+        "symfony/dotenv": "^4.2",
+        "helhum/typo3-console": "^5.6"
     },
     "extra": {
         "patches": {
@@ -53,7 +54,6 @@
     ],
     "require-dev": {
         "friendsoftypo3/extension-builder": "dev-master",
-        "deployer/deployer": "^6.3",
-        "helhum/typo3-console": "^5.6"
+        "deployer/deployer": "^6.3"
     }
 }
