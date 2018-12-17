@@ -1,0 +1,7 @@
+# rename to hosts.yml
+example.domain.name:
+  repository: 'https://github.com/HofUniversityIndieOne2018/red-cross-project.git'
+  stage: 'production'
+  deploy_path: '~/site'
+  typo3_webroot: 'public'
+  user: 'example_user'

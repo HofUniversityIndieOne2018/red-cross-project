@@ -9,3 +9,5 @@
 /.idea/
 /.local/
 .env
+/.deploy/hosts.yml
+!/.deploy/hosts/example.domain.name/.env
