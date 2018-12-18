@@ -174,10 +174,12 @@ task('database:push', function () {
         }
 
     } catch (\Exception $exception) {
-        // in any case remove database dump again
-        run('cd {{deploy_path}} && if [ -e database/{{database_file}} ]; then rm database/{{database_file}}; fi');
         writeln("{{MsgClear}}{{SymError}}");
         throw $exception;
+    } finally {
+        // in any case remove database dumps again
+        runLocally('if [ -e {{database_file}} ]; then rm {{database_file}}; fi');
+        run('cd {{deploy_path}} && if [ -e database/{{database_file}} ]; then rm database/{{database_file}}; fi');
     }
 })->desc('Push local database to remote host');
 
