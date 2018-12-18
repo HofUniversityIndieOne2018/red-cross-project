@@ -4,6 +4,9 @@ This repository contains the resources and results of the lecture
 Independent Course Work I in Hof University's master degree program
 Software Engineering for Industrial Applications.
 
+This project is based on [TYPO3 v9.5](https://get.typo3.org/), [Site Package Builder](https://sitepackagebuilder.com/),
+[Bootstrap Package](https://github.com/benjaminkott/bootstrap_package) and [Extension Builder](https://github.com/FriendsOfTYPO3/extension_builder). 
+
 ## Installation
 
 * having Docker and [DDEV](https://github.com/drud/ddev) (at least version 1.5) installed
