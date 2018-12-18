@@ -54,6 +54,7 @@
     ],
     "require-dev": {
         "friendsoftypo3/extension-builder": "dev-master",
-        "deployer/deployer": "^6.3"
+        "deployer/deployer": "^6.3",
+        "codeception/codeception": "^2.5"
     }
 }
