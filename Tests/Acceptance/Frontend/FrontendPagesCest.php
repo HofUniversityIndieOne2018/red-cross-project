@@ -38,5 +38,7 @@ class FrontendPagesCest
 
         $I->see('My Activities');
         $I->see('All Activities');
+
+        $I->makeScreenshot('logged-in');
     }
 }
