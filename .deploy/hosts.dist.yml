@@ -1,7 +1,14 @@
-# rename to hosts.yml
+# rename to hosts.yml & change sensitive information
 example.domain.name:
   repository: 'https://github.com/HofUniversityIndieOne2018/red-cross-project.git'
   stage: 'production'
+  # deploy path + typo3_webroot result in public web path, here e.g. '~/site/current/public/'
+  # (the 'current' segment is maintained by Deployer, pointing to the current release)
   deploy_path: '~/site'
   typo3_webroot: 'public'
+  # remove the typo3_backend_user section if not to be changed on remote host
+  typo3_backend_user:
+    - username: admin
+      password: '$argon2i$v=19$m=16384,t=16,p=2$alFmY2pxeDlBMGFSalpkaA$Vomt09SrY/a8Z0KKD4XBrAP+klPsjuIjDC0m1D7bhBQ'
   user: 'example_user'
+  port: 22
