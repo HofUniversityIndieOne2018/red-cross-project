@@ -21,6 +21,7 @@ class AddressTest extends UnitTestCase
 
     protected function tearDown()
     {
+        unset($this->subject);
         parent::tearDown();
     }
 
