@@ -1,10 +1,12 @@
 <?php
 namespace OliverHader\PlanningApp\Tests\Unit\Controller;
 
+use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
+
 /**
  * Test case.
  */
-class ActivityControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
+class ActivityControllerTest extends UnitTestCase
 {
     /**
      * @var \OliverHader\PlanningApp\Controller\ActivityManagementController

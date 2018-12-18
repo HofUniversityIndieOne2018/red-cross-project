@@ -1,10 +1,13 @@
 <?php
 namespace OliverHader\PlanningApp\Tests\Unit\Domain\Model;
 
+use TYPO3\CMS\Extbase\Domain\Model\FrontendUser;
+use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
+
 /**
  * Test case.
  */
-class VolunteerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
+class VolunteerTest extends UnitTestCase
 {
     /**
      * @var \OliverHader\PlanningApp\Domain\Model\Volunteer
@@ -28,7 +31,7 @@ class VolunteerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     public function getUserReturnsInitialValueForInt()
     {
         self::assertSame(
-            0,
+            null,
             $this->subject->getUser()
         );
     }
@@ -38,10 +41,12 @@ class VolunteerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
      */
     public function setUserForIntSetsUser()
     {
-        $this->subject->setUser(12);
+        $user = $this->prophesize(FrontendUser::class)
+            ->reveal();
+        $this->subject->setUser($user);
 
         self::assertAttributeEquals(
-            12,
+            $user,
             'user',
             $this->subject
         );

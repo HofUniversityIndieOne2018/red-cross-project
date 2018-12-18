@@ -1,10 +1,12 @@
 <?php
 namespace OliverHader\PlanningApp\Tests\Unit\Domain\Model;
 
+use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
+
 /**
  * Test case.
  */
-class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
+class AddressTest extends UnitTestCase
 {
     /**
      * @var \OliverHader\PlanningApp\Domain\Model\Address
