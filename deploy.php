@@ -10,9 +10,9 @@ set('application', 'indie-one-2018');
 // This allow you to enter passphrase for keys or add host to known_hosts.
 set('git_tty', true);
 
-// Shared files/dirs between deploys
-add('shared_files', [
-    '{{release_path}}/.env'
+// Shared files/dirs between deployments (override in order to get rid of .htaccess)
+set('shared_files', [
+    '.env'
 ]);
 add('shared_dirs', [
     // '{{typo3_webroot}}/fileadmin', // disabled fileadmin, since handled in Git repository ("has state")
@@ -222,6 +222,9 @@ task('dotenv:deploy', function () {
 
 task('typo3:finish', function() {
     within('{{release_path}}', function () {
+        // @todo .htaccess file should be part of TYPO3 CLI task
+        run('if [ ! -f {{typo3_webroot}}/.htaccess ]; then cp {{typo3_webroot}}/typo3/sysext/install/Resources/Private/FolderStructureTemplateFiles/root-htaccess {{typo3_webroot}}/.htaccess; fi');
+        run('vendor/bin/typo3cms install:fixfolderstructure');
         run('vendor/bin/typo3cms install:generatepackagestates');
         run('vendor/bin/typo3cms extension:setupactive');
         run('vendor/bin/typo3cms cache:flush');
