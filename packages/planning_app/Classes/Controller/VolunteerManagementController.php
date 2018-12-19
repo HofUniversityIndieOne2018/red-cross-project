@@ -16,7 +16,7 @@ use OliverHader\SessionService\SubjectResolver;
 /**
  * VolunteerController
  */
-class VolunteerController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class VolunteerManagementController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
     /**
      * @var VolunteerRepository
