@@ -10,6 +10,8 @@
 page {
     includeCSS {
         theme = EXT:red_cross_site/Resources/Public/Scss/Theme/theme.scss
+        faMain = EXT:red_cross_site/Resources/Public/Bundle/FontAwesome/css/fontawesome.css
+        faSolid = EXT:red_cross_site/Resources/Public/Bundle/FontAwesome/css/solid.css
     }
 
     includeJSLibs {
