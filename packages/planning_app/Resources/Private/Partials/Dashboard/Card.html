@@ -1,0 +1,15 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <div class="{class}">
+        <div class="card">
+            <f:if condition="{header}">
+                <h5 class="card-header">
+                    {header}
+                </h5>
+            </f:if>
+            <div class="card-body">
+                {textContent}
+                {htmlContent -> f:format.raw()}
+            </div>
+        </div>
+    </div>
+</html>

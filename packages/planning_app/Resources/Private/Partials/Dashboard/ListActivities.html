@@ -1,34 +1,31 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
 	  xmlns:planning="http://typo3.org/ns/OliverHader/PlanningApp/ViewHelpers"
 	  data-namespace-typo3-fluid="true">
-	<table  class="tx_planningapp" >
-		<tr>
-			<th><f:translate key="tx_planningapp_domain_model_activity.title" /></th>
-			<th> </th>
-			<th> </th>
-		</tr>
 
-		<f:for each="{activities}" as="activity">
-			<tr>
-				<td><f:link.action action="showActivity" arguments="{activity : activity, previousAction: previousAction}"> {activity.title}</f:link.action></td>
-				<td><f:link.action action="showActivity" arguments="{activity : activity, previousAction: previousAction}">
-					Show
-				</f:link.action></td>
-				<td>
-					<planning:activity.ifSubscribed activity="{activity}" volunteer="{currentVolunteer}">
-						<f:then>
-							<f:link.action action="unsubscribe" arguments="{activity : activity}">
-								Unsubscribe
-							</f:link.action>
-						</f:then>
-						<f:else>
-							<f:link.action action="subscribe" arguments="{activity : activity}">
-								Subscribe
-							</f:link.action>
-						</f:else>
-					</planning:activity.ifSubscribed>
-				</td>
-			</tr>
-		</f:for>
-	</table>
+    <f:for each="{activities}" as="activity">
+        <div class="d-flex">
+            <div class="mr-auto">
+                <f:link.action action="showActivity" arguments="{activity : activity, previousAction: previousAction}">
+                    {activity.datePeriod.startTime -> f:format.date(format:'Y-m-d')}
+                    -{activity.datePeriod.endTime -> f:format.date(format:'Y-m-d')}: {activity.title}
+                </f:link.action>
+            </div>
+            <div class="">
+                <planning:activity.ifSubscribed activity="{activity}" volunteer="{currentVolunteer}">
+                    <f:then>
+                        <f:link.action action="unsubscribe" arguments="{activity : activity}"
+                                       additionalAttributes="{role: 'button'}" class="btn btn-danger btn-md">
+                            <i class="fas fa-calendar-minus"></i>
+                        </f:link.action>
+                    </f:then>
+                    <f:else>
+                        <f:link.action action="subscribe" arguments="{activity : activity}"
+                                       additionalAttributes="{role: 'button'}" class="btn btn-success btn-md">
+                            <i class="fas fa-calendar-plus"></i>
+                        </f:link.action>
+                    </f:else>
+                </planning:activity.ifSubscribed>
+            </div>
+        </div>
+    </f:for>
 </html>

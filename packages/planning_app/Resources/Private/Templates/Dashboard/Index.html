@@ -6,14 +6,36 @@
 
 		<f:flashMessages />
 
-		<h2>Next activities</h2>
-		<f:if condition="{activities}">
-			<f:then>
-				<f:render partial="Dashboard/ListActivities" arguments="{_all}" />
-			</f:then>
-			<f:else>
-				You're not subscribed to any activity.
-			</f:else>
-		</f:if>
+        <div class="row">
+            <f:render partial="Dashboard/Card" contentAs="htmlContent" arguments="{
+                    class: 'col-sm-12 col-md-6 mb-3',
+                    header: 'Subscriptions'
+                }">
+                <f:if condition="{activities}">
+                    <f:then>
+                        <f:render partial="Dashboard/ListActivities" arguments="{_all}" />
+                    </f:then>
+                    <f:else>
+                        <p class="card-title">You're not subscribed to any activity.</p>
+                    </f:else>
+                </f:if>
+
+            </f:render>
+
+            <f:render partial="Dashboard/Card" contentAs="htmlContent" arguments="{
+                    class: 'col-sm-12 col-md-6 mb-3',
+                    header: 'Next activities'
+                }">
+                Empty
+            </f:render>
+
+            <f:render partial="Dashboard/Card" contentAs="htmlContent" arguments="{
+                    class: 'col-sm-12 col-md-6',
+                    header: 'Next activities'
+                }">
+                Empty
+            </f:render>
+        </div>
+
 	</f:section>
 </html>
