@@ -12,6 +12,8 @@ namespace OliverHader\PlanningApp\Domain\Model;
  *
  ***/
 
+use TYPO3\CMS\Extbase\Annotation\ORM;
+
 /**
  * Activity
  */
@@ -39,6 +41,13 @@ class Activity extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @cascade remove
      */
     protected $timeFrames = null;
+
+    /**
+     * Computed & transient DatePeriod entity based on all DatePeriod entities
+     * @var bool|null|DatePeriod
+     * @ORM\Transient
+     */
+    protected $datePeriod = false;
 
     /**
      * Volunteers
@@ -161,6 +170,50 @@ class Activity extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setTimeFrames(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $timeFrames)
     {
         $this->timeFrames = $timeFrames;
+    }
+
+    /**
+     * @return null|DatePeriod
+     * @throws \Exception
+     */
+    public function getDatePeriod(): ?DatePeriod
+    {
+        if ($this->datePeriod !== false) {
+            return $this->datePeriod;
+        }
+
+        /** @var DatePeriod[] $timeFrames */
+        $timeFrames = $this->timeFrames->toArray();
+        if (empty($timeFrames)) {
+            return $this->datePeriod = null;
+        }
+
+        usort($timeFrames, [$this, 'sortTimeFrames']);
+        $lastIndex = count($timeFrames) - 1;
+
+        $startTime = $timeFrames[0]->getStartTime();
+        $endTime = $timeFrames[$lastIndex]->getEndTime();
+
+        $this->datePeriod = new DatePeriod();
+        $this->datePeriod->setStartTime($startTime);
+        $this->datePeriod->setEndTime($endTime);
+        return $this->datePeriod;
+    }
+
+    /**
+     * @param DatePeriod $a
+     * @param DatePeriod $b
+     * @return int
+     */
+    private function sortTimeFrames(DatePeriod $a, DatePeriod $b): int
+    {
+        if ($a->getStartTime() < $b->getStartTime() || $a->getEndTime() < $b->getStartTime()) {
+            return -1;
+        }
+        if ($b->getEndTime() > $a ->getEndTime() || $b->getStartTime() > $a->getEndTime()) {
+            return 1;
+        }
+        return 0;
     }
 
     /**
