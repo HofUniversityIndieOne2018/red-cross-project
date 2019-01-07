@@ -90,11 +90,9 @@
 <!--###TEMPLATE_LOGOUT###-->
 <div class="well">
     <form action="###ACTION_URI###" target="_top" method="post">
-        <div class="form-group">
-            <button class="btn btn-primary" role="button">
-                ###LOGOUT_LABEL### <strong>###USERNAME###</strong>
-            </button>
-        </div>
+        <button class="btn btn-primary" role="button">
+            ###LOGOUT_LABEL### <strong>###USERNAME###</strong>
+        </button>
         <input type="hidden" name="logintype" value="logout" />
         <input type="hidden" name="pid" value="###STORAGE_PID###" />
         <input type="hidden" name="###PREFIXID###[noredirect]" value="###NOREDIRECT###" />

@@ -70,5 +70,7 @@ plugin.bootstrap_package.settings.scss {
 # Frontend Login constants
 ###
 styles.content.loginform {
+    # avoid showing `You are now logged in as <username>`
+    showLogoutFormAfterLogin = 1
     templateFile = EXT:red_cross_site/Resources/Private/Templates/Extensions/FrontendLogin.html
 }
