@@ -1,5 +1,16 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-	<f:link.action controller="Dashboard" action="editProfile">Edit Profile</f:link.action> |
-	<f:link.action controller="Dashboard" action="myActivities">My Activities</f:link.action> |
-	<f:link.action controller="Dashboard" action="allActivities">All Activities</f:link.action> |
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <f:link.action controller="Dashboard" action="index" class="nav-link">Overview</f:link.action>
+        </li>
+        <li class="nav-item">
+            <f:link.action controller="Dashboard" action="editProfile" class="nav-link">Edit Profile</f:link.action>
+        </li>
+        <li class="nav-item">
+            <f:link.action controller="Dashboard" action="myActivities" class="nav-link">My Activities</f:link.action>
+        </li>
+        <li class="nav-item">
+            <f:link.action controller="Dashboard" action="allActivities" class="nav-link">All Activities</f:link.action>
+        </li>
+    </ul>
 </html>
