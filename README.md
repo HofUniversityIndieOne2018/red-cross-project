@@ -17,7 +17,7 @@ This project is based on [TYPO3 v9.5](https://get.typo3.org/), [Site Package Bui
 * execute `ddev composer install`
 * import database using `ddev import-db --src ./ddev/database.sql.gz`
 
-Web project is provided at [Web project is provided at [http://red-cross-project.ddev.local/](http://red-cross-project.ddev.local/)
+Web project is provided at [http://red-cross-project.ddev.local/](http://red-cross-project.ddev.local/)
 
 ## Deployment
 
